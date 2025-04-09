@@ -1,39 +1,59 @@
 {
   "name": "tradexai-binance-icons",
   "version": "1.0.0",
-  "description": "Crypto/currency icons from Binance exchange",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "crypto",
-    "currency",
-    "manifest.json",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "node example.js"
+  "description": "The Crypto/currency icons listed on Binance exchange",
+  "author": {
+    "name": "TradexAI",
+    "email": "qviet92@gmail.com"
   },
-  "keywords": [
-    "binance",
-    "icons",
-    "crypto",
-    "cryptocurrency",
-    "currency",
-    "svg",
-    "tradexai"
-  ],
-  "author": "TradeX AI",
-  "license": "MIT",
+  "homepage": "https://github.com/TaQuangTu/binance-icons.git",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TaQuangTu/binance-icons.git"
   },
-  "bugs": {
-    "url": "https://github.com/TaQuangTu/binance-icons.git/issues"
+  "keywords": [
+    "binance",
+    "svg",
+    "icons",
+    "bitcoin",
+    "bnb",
+    "tradexai"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.js",
+      "types": "./types/index.d.ts"
+    }
   },
-  "homepage": "https://github.com/TaQuangTu/binance-icons.git#readme"
+  "scripts": {
+    "clean": "rimraf lib/*",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "postbuild": "terser lib/index.js -o lib/index.js -c",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts --ignore-path .gitignore",
+    "fix": "eslint src/**/*.ts --fix --ignore-path .gitignore"
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "terser": "^5.10.0",
+    "typescript": "^4.5.4"
+  }
 }

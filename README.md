@@ -48,45 +48,37 @@ https://github.com/VadimMalykhin/binance-icons/archive/refs/heads/main.zip
 **JavaScript**
 
 ```js
-const {
-  binanceCryptoIcons,
-  binanceEtfIcons,
-  binanceCurrencyIcons,
-} = require("tradexai-binance-icons");
+const { binanceCryptoIcons, binanceEtfIcons, binanceCurrencyIcons } = require('tradexai-binance-icons')
 
 // Check if icon exists
-const hasBtc = binanceCryptoIcons.has("btc");
+const hasBtc = binanceCryptoIcons.has('btc')
 
 // Get icon data
-const btcIcon = binanceCryptoIcons.get("btc");
-console.log(btcIcon.name); // Bitcoin
-console.log(btcIcon.symbol); // btc
-console.log(btcIcon.svg); // SVG string content
+const btcIcon = binanceCryptoIcons.get('btc')
+console.log(btcIcon.name) // Bitcoin
+console.log(btcIcon.symbol) // btc
+console.log(btcIcon.svg) // SVG string content
 
 // Get all available icon symbols
-const allCryptoSymbols = binanceCryptoIcons.getAllSymbols();
+const allCryptoSymbols = binanceCryptoIcons.getAllSymbols()
 ```
 
 **TypeScript**
 
 ```ts
-import {
-  binanceCryptoIcons,
-  binanceEtfIcons,
-  binanceCurrencyIcons,
-} from "tradexai-binance-icons";
+import { binanceCryptoIcons, binanceEtfIcons, binanceCurrencyIcons } from 'tradexai-binance-icons'
 
 // Check if icon exists
-const hasBtc = binanceCryptoIcons.has("btc");
+const hasBtc = binanceCryptoIcons.has('btc')
 
 // Get icon data
-const btcIcon = binanceCryptoIcons.get("btc");
-console.log(btcIcon?.name); // Bitcoin
-console.log(btcIcon?.symbol); // btc
-console.log(btcIcon?.svg); // SVG string content
+const btcIcon = binanceCryptoIcons.get('btc')
+console.log(btcIcon?.name) // Bitcoin
+console.log(btcIcon?.symbol) // btc
+console.log(btcIcon?.svg) // SVG string content
 
 // Get all available icon symbols
-const allCryptoSymbols = binanceCryptoIcons.getAllSymbols();
+const allCryptoSymbols = binanceCryptoIcons.getAllSymbols()
 ```
 
 ### Zip Archive

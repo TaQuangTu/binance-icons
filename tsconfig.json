@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES6",
+      "moduleResolution": "node",
+      "lib": ["es6", "dom"],
+      "baseUrl": ".",
+      "rootDir": "./src",
+      "outDir": "./lib",
+      "typeRoots": ["./types", "./node_modules/@types"],
+      "strict": true,
+      "sourceMap": true,
+      "declaration": false,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "removeComments": true,
+      "types": ["node"]
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["./node_modules"],
+    "files": ["./types/index.d.ts", "./src/index.ts"]
+  }
