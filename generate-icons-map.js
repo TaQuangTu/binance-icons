@@ -1,29 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path to crypto icons
-const cryptoIconsDir = path.join(__dirname, 'icons', 'currency');
-
 // Function to read SVG files and create the map
-async function createIconsMap() {
-  // Check if directory exists
-  if (!fs.existsSync(cryptoIconsDir)) {
-    console.error(`Directory not found: ${cryptoIconsDir}`);
-    return;
-  }
+async function createIconsMap(inputIconDir, outputMaps, outputIconFile) {
+  const outputFile = path.join(__dirname, outputIconFile);
+  const cryptoIconsDir = path.join(__dirname, 'icons', inputIconDir);
+  if (!fs.existsSync(cryptoIconsDir)) return;
 
-  // Read all files in the directory
   const files = fs.readdirSync(cryptoIconsDir);
-  
-  // Filter for SVG files only
   const svgFiles = files.filter(file => file.toLowerCase().endsWith('.svg'));
   
-  // Create map entries
   const mapEntries = [];
   
   for (const file of svgFiles) {
     try {
-      // Extract name from filename (remove .svg extension)
       const name = file.replace('.svg', '').toLowerCase();
       
       // Read SVG content
@@ -36,21 +26,33 @@ async function createIconsMap() {
     }
   }
   
+
   // Create the final output
   const output = `
-const binanceCurrencyIcons: Map<string, string> = new Map([
+const ${outputMaps}: Map<string, string> = new Map([
 ${mapEntries.join(',\n')}
 ]);
 
-export default binanceCurrencyIcons;
-`;
+export const ${outputMaps};
 
-  // Write to output file
-  const outputFile = path.join(__dirname, 'currency-icons-map.ts');
+`;
+  console.log({outputFile, output})
   fs.writeFileSync(outputFile, output, 'utf8');
-  
-  console.log(`Successfully created ${outputFile} with ${mapEntries.length} icons`);
 }
 
-// Run the function
-createIconsMap().catch(console.error);
+
+
+[{
+    'inputIconDir': 'crypto',
+    'outputMaps': 'binanceCryptoIcons',
+    'outputIconFile': 'binance-crypto-icons.ts'
+},  
+{
+    'inputIconDir': 'currency',
+    'outputMaps': 'binanceCurrencyIcons',
+    'outputIconFile': 'binance-currency-icons.ts'
+}].forEach((current) => {
+    createIconsMap(current.inputIconDir, current.outputMaps, current.outputIconFile).catch(console.error);
+});
+
+
