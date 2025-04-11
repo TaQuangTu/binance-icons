@@ -1,6 +1,6 @@
 {
   "name": "tradex-binance-icons",
-  "version": "1.0.4-3",
+  "version": "1.0.4-13",
   "description": "The Crypto/currency icons listed on Binance exchange",
   "author": {
     "name": "TradexAI",
@@ -52,7 +52,7 @@
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
-    "rimraf": "^3.0.2",
+    "rimraf": "3.0.2",
     "terser": "^5.10.0",
     "typescript": "^4.5.4"
   }
