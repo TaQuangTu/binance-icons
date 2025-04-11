@@ -1,0 +1,10 @@
+.git/
+.github/
+.gitignore
+.gitattributes
+.editorconfig
+PREVIEW.md
+CHANGELOG.md
+node_modules/
+.DS_Store
+*.log 
