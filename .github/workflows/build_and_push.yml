@@ -33,9 +33,9 @@ jobs:
 
       - name: auto increase version
         run: |
-          - npm version --no-git-tag-version $(npm view tradex-binance-icons@latest version)
-          - npm version --no-git-tag-version prerelease
-          - npm publish
+          npm version --no-git-tag-version $(npm view tradex-binance-icons@latest version)
+          npm version --no-git-tag-version prerelease
+          npm publish
 
       - name: Build package
         run: npm run build
