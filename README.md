@@ -19,6 +19,7 @@ The Crypto/currency icons listed on <a href="https://bit.ly/3qEmuJp">Binance</a>
 ### Package
 
 ```shell
+npm install tradex-binance-icons
 npm add binance-icons
 ```
 
