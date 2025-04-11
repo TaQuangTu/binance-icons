@@ -19,7 +19,7 @@ The Crypto/currency icons listed on <a href="https://bit.ly/3qEmuJp">Binance</a>
 ### Package
 
 ```shell
-npm install tradexai-binance-icons
+npm install tradex-binance-icons
 ```
 
 ### Content Delivery Network (CDN)
@@ -48,7 +48,7 @@ https://github.com/VadimMalykhin/binance-icons/archive/refs/heads/main.zip
 **JavaScript**
 
 ```js
-const { binanceCryptoIcons, binanceEtfIcons, binanceCurrencyIcons } = require('tradexai-binance-icons')
+const { binanceCryptoIcons, binanceEtfIcons, binanceCurrencyIcons } = require('tradex-binance-icons')
 
 // Check if icon exists
 const hasBtc = binanceCryptoIcons.has('btc')
@@ -66,7 +66,7 @@ const allCryptoSymbols = binanceCryptoIcons.getAllSymbols()
 **TypeScript**
 
 ```ts
-import { binanceCryptoIcons, binanceEtfIcons, binanceCurrencyIcons } from 'tradexai-binance-icons'
+import { binanceCryptoIcons, binanceEtfIcons, binanceCurrencyIcons } from 'tradex-binance-icons'
 
 // Check if icon exists
 const hasBtc = binanceCryptoIcons.has('btc')
@@ -93,7 +93,7 @@ Use the `manifest.json` file to resolve all available icons.
 ## Resources
 
 - [Figma](https://www.figma.com/community/file/1055487423124551755)
-- [NPM](https://www.npmjs.com/package/tradexai-binance-icons)
+- [NPM](https://www.npmjs.com/package/tradex-binance-icons)
 
 ## Contributing
 

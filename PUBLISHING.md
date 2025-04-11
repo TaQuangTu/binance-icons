@@ -1,6 +1,6 @@
 # Publishing to NPM
 
-This document outlines the steps to publish the `tradexai-binance-icons` package to the NPM registry.
+This document outlines the steps to publish the `tradex-binance-icons` package to the NPM registry.
 
 ## Prerequisites
 
@@ -60,20 +60,20 @@ This will run the `prepublishOnly` script automatically and then publish the pac
 
 6. **Verify the published package**:
 
-Visit `https://www.npmjs.com/package/tradexai-binance-icons` to verify that your package has been published successfully.
+Visit `https://www.npmjs.com/package/tradex-binance-icons` to verify that your package has been published successfully.
 
 ## Unpublish/Deprecate
 
 If needed, you can unpublish the package within 72 hours of publishing:
 
 ```bash
-npm unpublish tradexai-binance-icons
+npm unpublish tradex-binance-icons
 ```
 
 Or you can deprecate it if it's no longer maintained:
 
 ```bash
-npm deprecate tradexai-binance-icons "This package is no longer maintained"
+npm deprecate tradex-binance-icons "This package is no longer maintained"
 ```
 
 ## Troubleshooting
