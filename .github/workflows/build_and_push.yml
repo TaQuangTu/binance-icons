@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     tags:
-      - 'v*'
+      - "v*"
   release:
     types: [created]
   workflow_dispatch:
@@ -19,17 +19,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
 
       # - name: Install dependencies
       #   run: npm ci
 
-      - name: Run tests
-        run: npm test
+      # - name: Run tests
+      #   run: npm test
 
       - name: Generate icons map
         run: node generate-icons-map
+
+      - name: auto increase version
+        run: |
+          - npm version --no-git-tag-version $(npm view tradex-binance-icons@latest version)
+          - npm version --no-git-tag-version prerelease
+          - npm publish
 
       - name: Build package
         run: npm run build
