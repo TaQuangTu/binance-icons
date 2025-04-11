@@ -25,23 +25,25 @@ jobs:
       # - name: Install dependencies
       #   run: npm ci
 
-      # - name: Run tests
-      #   run: npm test
 
       - name: Generate icons map
         run: node generate-icons-map
 
-      - name: auto increase version
+      - name: Auto increment version
         run: |
-          npm version --no-git-tag-version $(npm view tradex-binance-icons@latest version)
+          # Get current version from package.json
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "Current version: $CURRENT_VERSION"
+          
+          # Increment prerelease version
           npm version --no-git-tag-version prerelease
-          npm publish
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "New version: $NEW_VERSION"
 
       - name: Build package
         run: npm run build
 
       - name: Publish to npm
-        if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'release'
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
